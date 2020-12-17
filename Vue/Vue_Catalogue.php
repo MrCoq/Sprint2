@@ -19,7 +19,9 @@ function Vue_Catalogue_Public($categorieList)
     for($i = 0; $i<sizeof($categorieList); $i++) {
         $actuel = $categorieList[$i];
 
-        echo "<li><form style='display: contents'><button style='' type='submit'name='buttonClique'>$actuel[libelle]</a><input type='hidden' name='idCategorie' value='$actuel[idCategorie]'></form></li>";
+        if($actuel["statusCategorie"] == 0) {
+            echo "<li><form style='display: contents'><button style='' type='submit'name='buttonClique'>$actuel[libelle]</a><input type='hidden' name='idCategorie' value='$actuel[idCategorie]'></form></li>";
+        }
 
     }
 

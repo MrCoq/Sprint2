@@ -24,6 +24,17 @@ function Vue_Gestion_Categorie_Liste($listeCategorie)
     for($i = 0; $i<sizeof($listeCategorie); $i++) {
         $actuelle = $listeCategorie[$i];
 
+        $statusCategorie = $actuelle["statusCategorie"];
+
+        switch($statusCategorie) {
+            case 0:
+                $statusCategorie = "Désactiver";
+                break;
+            case 1:
+                $statusCategorie = "Activer";
+                break;
+        }
+
         echo "
         <tr>
             <td>$actuelle[idCategorie]</td>
@@ -31,6 +42,12 @@ function Vue_Gestion_Categorie_Liste($listeCategorie)
             <td>
                 <form style='display: contents'>
                     <button type='submit' name='buttonModifierCategorie'> Modifier </button>
+                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
+                </form>
+            </td>
+            <td>
+                <form style='display: contents'>
+                    <button type='submit' name='buttonActiverCategorie'> $statusCategorie </button>
                     <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
                 </form>
             </td>
@@ -131,6 +148,17 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
     for($i = 0; $i<sizeof($listeProduit); $i++) {
         $actuel = $listeProduit[$i];
 
+        $statusProduit = $actuel["statusProduit"];
+
+        switch($statusProduit) {
+            case 0:
+                $statusProduit = "Désactiver";
+                break;
+            case 1:
+                $statusProduit = "Activer";
+                break;
+        }
+
         echo "
         <tr>
             <td>$actuel[idProduit]</td>
@@ -144,20 +172,8 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
                 </form>
             </td>
             <td>
-                <form style='display: contents'>";
-
-        $statusProduit = $actuel["statusProduit"];
-
-        switch($statusProduit) {
-            case 0:
-                $statusProduit = "Désactiver";
-                break;
-            case 1:
-                $statusProduit = "Activer";
-                break;
-        }
-
-        echo "    <button type='submit' name='buttonActiverProduit'>$statusProduit</button>
+                <form style='display: contents'>
+                  <button type='submit' name='buttonActiverProduit'>$statusProduit</button>
                   <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
                 </form>
             </td>

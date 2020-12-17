@@ -47,7 +47,6 @@ if(isset($_SESSION["idUtilisateur"])) {
 
     else if(isset($_REQUEST["buttonActiverProduit"])) {
         $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
-
         switch($produit["statusProduit"]) {
             case 0:
                 Produit_Activation($connexion, $produit["idProduit"], 1);
@@ -56,10 +55,8 @@ if(isset($_SESSION["idUtilisateur"])) {
                 Produit_Activation($connexion, $produit["idProduit"], 0);
                 break;
         }
-
         $produitList = Produit_Select_ParIdCategorie($connexion, $produit["idCategorie"]);
         Vue_Gestion_Produit_Liste($produitList, $produit["idCategorie"]);
-
     }
 
     else if (isset($_REQUEST["nouvelleCategorie"])) {
@@ -82,6 +79,23 @@ if(isset($_SESSION["idUtilisateur"])) {
         $categorieList = Categorie_Select($connexion);
         Vue_Gestion_Categorie_Liste($categorieList);
     }*/
+
+    else if(isset($_REQUEST["buttonActiverCategorie"])) {
+
+        $categorie = Categorie_Select_ParID($connexion, $_REQUEST["idCategorie"]);
+        switch($categorie["statusCategorie"]) {
+            case 0:
+                Categorie_Activation($connexion, $categorie["idCategorie"], 1);
+                break;
+            case 1:
+                Categorie_Activation($connexion, $categorie["idCategorie"], 0);
+                break;
+        }
+
+        $categorieList = Categorie_Select($connexion);
+        Vue_Gestion_Categorie_Liste($categorieList);
+
+    }
 
     else {
         $categorieList = Categorie_Select($connexion);

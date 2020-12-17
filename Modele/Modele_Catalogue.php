@@ -32,6 +32,13 @@ function Categorie_Supprimer($connexionPDO, $idCategorie) {
     return $reponse;
 }
 
+function Categorie_Activation($connexionPDO, $idCategorie, $status) {
+    $requetePreparée = $connexionPDO->prepare('update categorie set statusCategorie = :paramStatusCategorie where idCategorie = :paramIdCategorie');
+    $requetePreparée->bindParam('paramIdCategorie', $idCategorie);
+    $requetePreparée->bindParam('paramStatusCategorie', $status);
+    $reponse = $requetePreparée->execute();
+    return $reponse;
+}
 
 function Produit_Select($connexionPDO)
 {
