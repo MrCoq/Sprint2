@@ -112,7 +112,6 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
 
     <table style='display: inline-block;'>
     
-    
     <tr>
         <td colspan='3' style='text-align: center'><form style='display: contents'>
                         <button type='submit' name='nouveauProduit'>Ajouter un nouveau produit</button>
@@ -121,8 +120,6 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
         </td>
  
     </tr>
-    
-
     <tr>
             <th>idProduit</th>
             <th>nom</th>
@@ -132,25 +129,36 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
     ";
 
     for($i = 0; $i<sizeof($listeProduit); $i++) {
-        $actuelle = $listeProduit[$i];
+        $actuel = $listeProduit[$i];
 
         echo "
         <tr>
-            <td>$actuelle[idProduit]</td>
-            <td>$actuelle[nom]</td>
-            <td>$actuelle[prixVenteHT]</td>
-            <td>$actuelle[idTVA]</td>
+            <td>$actuel[idProduit]</td>
+            <td>$actuel[nom]</td>
+            <td>$actuel[prixVenteHT]</td>
+            <td>$actuel[idTVA]</td>
             <td>
                 <form style='display: contents'>
                     <button type='submit' name='modifierProduit'> Modifier </button>
-                    <input type='hidden' name='idProduit' value='$actuelle[idProduit]'>
+                    <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
                 </form>
             </td>
             <td>
-                <form style='display: contents'>
-                    <!--<button type='submit' name='buttonSupprimerProduit'> Supprimer </button>-->
-                    <input type='hidden' name='idProduit' value='$actuelle[idProduit]'>
-                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
+                <form style='display: contents'>";
+
+        $statusProduit = $actuel["statusProduit"];
+
+        switch($statusProduit) {
+            case 0:
+                $statusProduit = "Désactiver";
+                break;
+            case 1:
+                $statusProduit = "Activer";
+                break;
+        }
+
+        echo "    <button type='submit' name='buttonActiver'>$statusProduit</button>
+                  <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
                 </form>
             </td>
             

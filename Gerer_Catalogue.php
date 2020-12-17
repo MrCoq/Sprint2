@@ -45,6 +45,24 @@ if(isset($_SESSION["idUtilisateur"])) {
         Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
     }*/
 
+    else if(isset($_REQUEST["buttonActiver"])) {
+
+        $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
+
+        switch($produit["statusProduit"]) {
+            case 0:
+                Produit_Activation($connexion, $produit["idProduit"], 1);
+                break;
+            case 1:
+                Produit_Activation($connexion, $produit["idProduit"], 0);
+                break;
+        }
+
+        $produitList = Produit_Select_ParIdCategorie($connexion, $produit["idCategorie"]);
+        Vue_Gestion_Produit_Liste($produitList, $produit["idCategorie"]);
+
+    }
+
     else if (isset($_REQUEST["nouvelleCategorie"])) {
         Vue_Gestion_Catalogue_Formulaire(true);
 

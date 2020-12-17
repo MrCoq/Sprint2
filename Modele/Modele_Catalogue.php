@@ -99,6 +99,14 @@ function Produit_Supprimer($connexionPDO, $idProduit) {
     return $reponse;
 }
 
+function Produit_Activation($connexionPDO, $idProduit, $status) {
+    $requetePreparée = $connexionPDO->prepare('update produit set statusProduit = :paramStatusProduit where idProduit = :paramIdProduit');
+    $requetePreparée->bindParam('paramIdProduit', $idProduit);
+    $requetePreparée->bindParam('paramStatusProduit', $status);
+    $reponse = $requetePreparée->execute();
+    return $reponse;
+}
+
 function Produit_Select_ParIdCategorie($connexionPDO, $idCategorie) {
     $requetePreparée = $connexionPDO->prepare('select produit.* from `produit`,`categorie` where categorie.idCategorie = produit.idCategorie and produit.idCategorie = :paramIdCategorie');
     $requetePreparée->bindParam('paramIdCategorie', $idCategorie);
