@@ -72,7 +72,7 @@ function Vue_Produit($connexion, $produit) {
     $actuel = Produit_Select_ParID($connexion, $produit);
     $categorie = Categorie_Select_ParID($connexion, $actuel["idCategorie"]);
 
-    echo "<form style='background: transparent; padding: 2px; border: none; display: block; width: 40%;  margin: auto; margin-top: 12%'>
+    echo "<form style='background: transparent; padding: 1px; border: none; display: block; width: 40%;  margin: auto; margin-top: 12%'>
             <button onclick='submit();' width='50%'
                     onmouseover=\"this.style.background='#FFFF99';this.style.color='#FF0000';\"
                      onmouseout=\"this.style.background='';this.style.color='';\"
