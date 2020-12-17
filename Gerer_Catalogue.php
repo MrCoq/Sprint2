@@ -45,8 +45,7 @@ if(isset($_SESSION["idUtilisateur"])) {
         Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
     }*/
 
-    else if(isset($_REQUEST["buttonActiver"])) {
-
+    else if(isset($_REQUEST["buttonActiverProduit"])) {
         $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
 
         switch($produit["statusProduit"]) {

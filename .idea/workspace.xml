@@ -4,7 +4,7 @@
     <list default="true" id="2b691c3a-989e-4547-af5f-6d45af8d7f09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gerer_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gerer_Catalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modele/Modele_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Modele_Catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Vue_Gestion_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue_Gestion_Catalogue.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +154,7 @@
       <workItem from="1608125371001" duration="1232000" />
       <workItem from="1608130976505" duration="1534000" />
       <workItem from="1608192953682" duration="985000" />
-      <workItem from="1608194210616" duration="4181000" />
+      <workItem from="1608194210616" duration="4559000" />
     </task>
     <servers />
   </component>

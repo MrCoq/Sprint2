@@ -157,7 +157,7 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
                 break;
         }
 
-        echo "    <button type='submit' name='buttonActiver'>$statusProduit</button>
+        echo "    <button type='submit' name='buttonActiverProduit'>$statusProduit</button>
                   <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
                 </form>
             </td>

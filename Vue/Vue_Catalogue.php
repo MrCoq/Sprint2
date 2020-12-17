@@ -38,7 +38,8 @@ function Vue_Catalogue_Produits($produitList, $libelle) {
     for($i = 0; $i<sizeof($produitList); $i++) {
         $actuel = $produitList[$i];
 
-        echo "
+        if($actuel["statusProduit"] == 0) {
+            echo "
         <form style='display: contents;'>
             <button onclick='submit();' name='buttonProduit' width='25%' style='margin: 20px'>
                  <table style='padding: 20px; display: inline-block; height: 300px;'>
@@ -62,6 +63,8 @@ function Vue_Catalogue_Produits($produitList, $libelle) {
             <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
             <input type='hidden' name='idCategorie' value='$actuel[idCategorie]'>
         </form>";
+        }
+
     }
 
     echo "</div>";
