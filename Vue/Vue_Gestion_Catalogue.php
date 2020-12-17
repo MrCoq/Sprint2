@@ -47,24 +47,34 @@ function Vue_Gestion_Categorie_Liste($listeCategorie)
             </td>
             <td>
                 <form style='display: contents'>
-                    <button type='submit' name='buttonActiverCategorie'> $statusCategorie </button>
-                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
-                </form>
-            </td>
-            <td>
-                <form style='display: contents'>
-                    <!--<button type='submit' name='buttonSupprimerCategorie'> Supprimer </button>-->
-                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
-                </form>
-            </td>
-            <td>
-                <form style='display: contents'>
                     <button type='submit' name='buttonListerProduit'> Produits associés </button>
                     <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
                 </form>
-            </td>
-            
-        </tr>";
+            </td>";
+
+
+        if($actuelle["statusCategorie"] == 1) {
+            echo "
+            <td>
+                <form style='display: contents'>
+                    <button type='submit' name='buttonSupprimerCategorie'> Supprimer </button>
+                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
+                </form>
+            </td>";
+        }
+
+            echo "
+            <td>
+                <form style='display: contents'>
+                    <button type='submit' name='buttonActiverCategorie'> $statusCategorie </button>
+                    <input type='hidden' name='idCategorie' value='$actuelle[idCategorie]'>
+                </form>
+            </td>";
+
+
+
+
+        echo "</tr>";
 
     }
 
@@ -130,8 +140,9 @@ function Vue_Gestion_Catalogue_Formulaire($modeCreation = true, $idCategorie = "
 
 
 
-function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
+function Vue_Gestion_Produit_Liste_ParCategorie($listeProduit, $idCategorie)
 {
+
 
     echo "<H1>Liste des produits de la catégorie</H1>
 
@@ -179,15 +190,31 @@ function Vue_Gestion_Produit_Liste($listeProduit, $idCategorie)
                     <button type='submit' name='modifierProduit'> Modifier </button>
                     <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
                 </form>
-            </td>
+            </td>";
+
+        if($statusProduit == "Activer") {
+            echo "
             <td>
                 <form style='display: contents'>
-                  <button type='submit' name='buttonActiverProduit'>$statusProduit</button>
+                  <button type='submit' name='buttonSupprimerProduit'>Supprimer</button>
                   <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
+                  <input type='hidden' name='idCategorie' value='$actuel[idCategorie]'>
                 </form>
-            </td>
-            
-        </tr>";
+            </td>";
+        }
+
+
+        echo "
+            <td>
+               <form style='display: contents'>
+                 <button type='submit' name='buttonActiverProduit'>$statusProduit</button>
+                 <input type='hidden' name='idProduit' value='$actuel[idProduit]'>
+               </form>
+           </td>";
+
+
+
+        echo "</tr>";
     }
 
     echo "</table>";

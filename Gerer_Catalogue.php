@@ -15,7 +15,7 @@ if(isset($_SESSION["idUtilisateur"])) {
 
     if (isset($_REQUEST["buttonListerProduit"])) {
         $produitList = Produit_Select_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
-        Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
+        Vue_Gestion_Produit_Liste_ParCategorie($produitList, $_REQUEST["idCategorie"]);
 
     } else if(isset($_REQUEST["nouveauProduit"])) {
         Vue_Gestion_Produit_Formulaire(true, $_REQUEST["idCategorie"]);
@@ -24,7 +24,7 @@ if(isset($_SESSION["idUtilisateur"])) {
         Produit_Creer($connexion, $_REQUEST["nom"], $_REQUEST["description"], $_REQUEST["resume"], $_REQUEST["fichierImage"], $_REQUEST["prixVenteHT"], $_REQUEST["idCategorie"], $_REQUEST["idTVA"]);
 
         $produitList = Produit_Select_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
-        Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
+        Vue_Gestion_Produit_Liste_ParCategorie($produitList, $_REQUEST["idCategorie"]);
 
     } else if(isset($_REQUEST["modifierProduit"])) {
         $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
@@ -35,14 +35,14 @@ if(isset($_SESSION["idUtilisateur"])) {
         Produit_Modifier($connexion, $_REQUEST["idProduit"], $_REQUEST["nom"], $_REQUEST["description"], $_REQUEST["resume"], $_REQUEST["fichierImage"], $_REQUEST["prixVenteHT"], $_REQUEST["idCategorie"], $_REQUEST["idTVA"]);
 
         $produitList = Produit_Select_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
-        Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
+        Vue_Gestion_Produit_Liste_ParCategorie($produitList, $_REQUEST["idCategorie"]);
 
-    } /*else if(isset($_REQUEST["buttonSupprimerProduit"])) {
-        ---------> Bouton retiré
+    } else if(isset($_REQUEST["buttonSupprimerProduit"])) {
+
         Produit_Supprimer($connexion, $_REQUEST["idProduit"]);
         $produitList = Produit_Select_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
-        Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
-    }*/
+        Vue_Gestion_Produit_Liste_ParCategorie($produitList, $_REQUEST["idCategorie"]);
+    }
 
     else if(isset($_REQUEST["buttonActiverProduit"])) {
         $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
@@ -55,7 +55,7 @@ if(isset($_SESSION["idUtilisateur"])) {
                 break;
         }
         $produitList = Produit_Select_ParIdCategorie($connexion, $produit["idCategorie"]);
-        Vue_Gestion_Produit_Liste($produitList, $produit["idCategorie"]);
+        Vue_Gestion_Produit_Liste_ParCategorie($produitList, $produit["idCategorie"]);
     }
 
     else if (isset($_REQUEST["nouvelleCategorie"])) {
@@ -76,16 +76,13 @@ if(isset($_SESSION["idUtilisateur"])) {
 
         $categorieList = Categorie_Select($connexion);
         Vue_Gestion_Categorie_Liste($categorieList);
-    }
-
-    /*else if(isset($_REQUEST["buttonSupprimerCategorie"])) {
-        ---------> Bouton retiré
+    } else if(isset($_REQUEST["buttonSupprimerCategorie"])) {
         Produit_Supprimer_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
         Categorie_Supprimer($connexion, $_REQUEST["idCategorie"]);
 
         $categorieList = Categorie_Select($connexion);
         Vue_Gestion_Categorie_Liste($categorieList);
-    }*/
+    }
 
     else if(isset($_REQUEST["buttonActiverCategorie"])) {
 
