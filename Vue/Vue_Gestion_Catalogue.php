@@ -71,7 +71,7 @@ function Vue_Gestion_Categorie_Liste($listeCategorie)
     echo "</table>";
 }
 
-function Vue_Gestion_Catalogue_Formulaire($modeCreation = true, $idCategorie = "", $libelle = "") {
+function Vue_Gestion_Catalogue_Formulaire($modeCreation = true, $idCategorie = "", $libelle = "", $description = "") {
     if ($modeCreation)
         echo "<H1>Création d'une nouvelle catégorie</H1>";
     else
@@ -97,6 +97,15 @@ function Vue_Gestion_Catalogue_Formulaire($modeCreation = true, $idCategorie = "
                     </td>
                     <td>
                         <input type='text' required placeholder='Nom de la catégorie' name='libelle' value='$libelle'>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label>Description de la catégorie : </label>
+                    </td>
+                    <td>
+                        <input type='text' placeholder='Description de la catégorie' name='description' value='$description'>
                     </td>
                 </tr>
         </tr>

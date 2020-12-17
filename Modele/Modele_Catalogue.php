@@ -25,6 +25,22 @@ function Categorie_Creer($connexionPDO, $libelle)
     return $idCategorie;
 }
 
+function Categorie_Modifier($connexionPDO, $idCategorie, $libelle = "", $description)
+{
+    $requetePreparée = $connexionPDO->prepare(
+        'UPDATE `categorie` 
+        SET `idCategorie`= :paramIdCategorie,
+        `libelle`= :paramLibelle,
+        `description`= :paramDescription
+        WHERE idCategorie = :paramIdCategorie');
+    $requetePreparée->bindParam('paramIdCategorie', $idCategorie);
+    $requetePreparée->bindParam('paramLibelle', $libelle);
+    $requetePreparée->bindParam('paramDescription', $description);
+
+    $reponse = $requetePreparée->execute(); //$reponse boolean sur l'état de la requête
+    return $reponse;
+}
+
 function Categorie_Supprimer($connexionPDO, $idCategorie) {
     $requetePreparée = $connexionPDO->prepare('delete categorie.* from `categorie` where idCategorie = :paramIdCategorie');
     $requetePreparée->bindParam('paramIdCategorie', $idCategorie);
@@ -73,7 +89,7 @@ function Produit_Creer($connexionPDO, $nom, $description = null, $resume = null,
     $idProduit = $connexionPDO->lastInsertId();
     return $idProduit;
 }
-//$_REQUEST["idProduit"], $_REQUEST["nom"], $_REQUEST["description"], $_REQUEST["resume"], $_REQUEST["fichierImage"], $_REQUEST["prixVenteHT"], $_REQUEST["idCategorie"], $_REQUEST["idTVA"]
+
 function Produit_Modifier($connexionPDO, $idProduit, $nom, $description, $resume, $fichierImage, $prixVenteHT, $idCategorie, $idTVA)
 {
     $requetePreparée = $connexionPDO->prepare(
@@ -95,6 +111,7 @@ function Produit_Modifier($connexionPDO, $idProduit, $nom, $description, $resume
     $requetePreparée->bindParam('paramprixVenteHT', $prixVenteHT);
     $requetePreparée->bindParam('paramidCategorie', $idCategorie);
     $requetePreparée->bindParam('paramidTVA', $idTVA);
+
     $reponse = $requetePreparée->execute(); //$reponse boolean sur l'état de la requête
     return $reponse;
 }

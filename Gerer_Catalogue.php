@@ -27,7 +27,6 @@ if(isset($_SESSION["idUtilisateur"])) {
         Vue_Gestion_Produit_Liste($produitList, $_REQUEST["idCategorie"]);
 
     } else if(isset($_REQUEST["modifierProduit"])) {
-
         $produit = Produit_Select_ParID($connexion, $_REQUEST["idProduit"]);
 
         Vue_Gestion_Produit_Formulaire(false, $produit["idCategorie"], $produit["idProduit"], $produit["nom"], $produit["description"], $produit["resume"], $produit["prixVenteHT"], $produit["idTVA"], $produit["fichierImage"]);
@@ -69,9 +68,17 @@ if(isset($_SESSION["idUtilisateur"])) {
         Vue_Gestion_Categorie_Liste($categorieList);
     } else if(isset($_REQUEST["buttonModifierCategorie"])) {
         $categorie = Categorie_Select_ParID($connexion, $_REQUEST["idCategorie"]);
-        Vue_Gestion_Catalogue_Formulaire(false, $categorie["idCategorie"], $categorie["libelle"]);
+        Vue_Gestion_Catalogue_Formulaire(false, $categorie["idCategorie"], $categorie["libelle"], $categorie["description"]);
 
-    } /*else if(isset($_REQUEST["buttonSupprimerCategorie"])) {
+    } else if(isset($_REQUEST["mettreAJourCategorie"])) {
+
+        Categorie_Modifier($connexion, $_REQUEST["idCategorie"], $_REQUEST["libelle"], $_REQUEST["description"]);
+
+        $categorieList = Categorie_Select($connexion);
+        Vue_Gestion_Categorie_Liste($categorieList);
+    }
+
+    /*else if(isset($_REQUEST["buttonSupprimerCategorie"])) {
         ---------> Bouton retiré
         Produit_Supprimer_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
         Categorie_Supprimer($connexion, $_REQUEST["idCategorie"]);
