@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b691c3a-989e-4547-af5f-6d45af8d7f09" name="Default Changelist" comment="" />
+    <list default="true" id="2b691c3a-989e-4547-af5f-6d45af8d7f09" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +153,10 @@
       <workItem from="1608130976505" duration="1534000" />
       <workItem from="1608192953682" duration="985000" />
       <workItem from="1608194210616" duration="6432000" />
-      <workItem from="1608205335801" duration="1755000" />
+      <workItem from="1608205335801" duration="3036000" />
+      <workItem from="1608276868988" duration="162000" />
+      <workItem from="1608277993781" duration="79000" />
+      <workItem from="1608279254061" duration="86000" />
     </task>
     <servers />
   </component>
@@ -274,10 +280,10 @@
       <screen x="0" y="0" width="1824" height="1176" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1824.1176@0.0.1824.1176" timestamp="1605575118766" />
-    <state x="649" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608198589293">
+    <state x="649" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608279316250">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="649" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1608198589293" />
+    <state x="649" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1010@0.0.1680.1010" timestamp="1608279316250" />
     <state x="596" y="102" width="687" height="972" key="find.popup" timestamp="1605566683881">
       <screen x="0" y="0" width="1824" height="1176" />
     </state>

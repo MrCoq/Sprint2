@@ -11,8 +11,6 @@ function Vue_Catalogue_Public($categorieList)
             <link rel='stylesheet' href='public\style.css' media='screen' type='text/css' />
         </head>
         <body>
- 
-
 
 <nav id='menu'><ul id='menu-closed'>";
 
