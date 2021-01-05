@@ -318,5 +318,9 @@ function Vue_Gestion_Produit_Formulaire($modeCreation = true, $idCategorie="", $
     echo "      </td>
             </tr>
         </form>
+        <form>
+        
+        
+        </form>
     </table>";
 }
