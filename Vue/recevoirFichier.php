@@ -13,7 +13,7 @@ if(isset($_FILES['fichier'])){
         "flv", "gif"); //Peut être des extensions en trop...
 
     if(in_array($file_ext,$expensions)=== false){
-        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+        $errors[]="Extension not allowed, please choose a JPEG or PNG file.";
     }
 
     if($file_size > 2097152666655){
@@ -23,7 +23,7 @@ if(isset($_FILES['fichier'])){
     if(empty($errors)==true){
         move_uploaded_file($file_tmp,'.\\'.$file_name);
         echo "Success <img src='$file_name'>";
-    }else{
+    } else{
         print_r($errors);
     }
 }
