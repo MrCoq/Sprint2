@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2b691c3a-989e-4547-af5f-6d45af8d7f09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue_Catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gerer_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Gerer_Catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/Modele_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Modele_Catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/Vue_Gestion_Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Vue_Gestion_Catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/recevoirFichier.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,15 +83,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="T:\Code\Aubry\Projet\Sprint1" />
-      <recent name="T:\Code\Aubry\Projet\Sprint1\Modele" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="T:\Code\Aubry\Projet\Sprint2\Modele" />
       <recent name="C:\xampp\htdocs\SiteWebSprint1" />
       <recent name="C:\xampp\htdocs\SiteWebSprint1\Modele" />
       <recent name="C:\Users\jba\Downloads\Atelier 1\SiteWebSprint1\Modele" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="T:\Code\Aubry\Projet\Sprint1" />
+      <recent name="T:\Code\Aubry\Projet\Sprint1\Modele" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.CastTemp.php">
@@ -156,12 +177,26 @@
       <workItem from="1608205335801" duration="3036000" />
       <workItem from="1608276868988" duration="162000" />
       <workItem from="1608277993781" duration="79000" />
-      <workItem from="1608279254061" duration="86000" />
+      <workItem from="1608279254061" duration="255000" />
+      <workItem from="1609761827379" duration="443000" />
+      <workItem from="1609843085085" duration="750000" />
+      <workItem from="1609848145160" duration="6736000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="390" y="163" key="#CLI_Interpreters" timestamp="1605427334130">
@@ -199,11 +234,11 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="518" y="307" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1606745365913" />
-    <state x="561" y="237" key="FileChooserDialogImpl" timestamp="1608126729595">
+    <state x="561" y="237" key="FileChooserDialogImpl" timestamp="1609854537633">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="2241" y="237" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1680.1010@1680.0.1680.1010" timestamp="1605525341629" />
-    <state x="561" y="237" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1608126729595" />
+    <state x="561" y="237" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1609854537633" />
     <state width="1637" height="281" key="GridCell.Tab.0.bottom" timestamp="1607951462347">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -264,11 +299,11 @@
       <screen x="0" y="0" width="1824" height="1176" />
     </state>
     <state width="884" height="386" key="GridCell.Tab.2.right/0.0.1824.1176@0.0.1824.1176" timestamp="1605458183264" />
-    <state x="665" y="435" key="NewPhpFileDialog" timestamp="1607948506978">
+    <state x="665" y="435" key="NewPhpFileDialog" timestamp="1609843099333">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="2345" y="435" key="NewPhpFileDialog/0.0.1680.1010/1680.0.1680.1010@1680.0.1680.1010" timestamp="1605526207548" />
-    <state x="665" y="435" key="NewPhpFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1607948506978" />
+    <state x="665" y="435" key="NewPhpFileDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1609843099333" />
     <state x="722" y="506" key="NewPhpFileDialog/0.0.1824.1176@0.0.1824.1176" timestamp="1605575348258" />
     <state x="284" y="126" key="SettingsEditor" timestamp="1607950765855">
       <screen x="0" y="0" width="1680" height="1010" />

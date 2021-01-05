@@ -71,11 +71,11 @@ if(isset($_SESSION["idUtilisateur"])) {
         Vue_Gestion_Catalogue_Formulaire(false, $categorie["idCategorie"], $categorie["libelle"], $categorie["description"]);
 
     } else if(isset($_REQUEST["mettreAJourCategorie"])) {
-
         Categorie_Modifier($connexion, $_REQUEST["idCategorie"], $_REQUEST["libelle"], $_REQUEST["description"]);
 
         $categorieList = Categorie_Select($connexion);
         Vue_Gestion_Categorie_Liste($categorieList);
+
     } else if(isset($_REQUEST["buttonSupprimerCategorie"])) {
         Produit_Supprimer_ParIdCategorie($connexion, $_REQUEST["idCategorie"]);
         Categorie_Supprimer($connexion, $_REQUEST["idCategorie"]);
@@ -85,7 +85,6 @@ if(isset($_SESSION["idUtilisateur"])) {
     }
 
     else if(isset($_REQUEST["buttonActiverCategorie"])) {
-
         $categorie = Categorie_Select_ParID($connexion, $_REQUEST["idCategorie"]);
         switch($categorie["statusCategorie"]) {
             case 0:

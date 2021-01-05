@@ -298,7 +298,7 @@ function Vue_Gestion_Produit_Formulaire($modeCreation = true, $idCategorie="", $
                         <label>Url de l'image du produit : </label>
                     </td>
                     <td>
-                        <input type='text' name='fichierImage' value='$fichierImage'>
+                        <input type='text' name='fichierImage' value='$fichierImage' style='display: inline-block;'>
                     </td>
                 </tr>
         </tr>
@@ -318,9 +318,14 @@ function Vue_Gestion_Produit_Formulaire($modeCreation = true, $idCategorie="", $
     echo "      </td>
             </tr>
         </form>
-        <form>
-        
-        
+    </table>
+    
+    <br>
+    <table style='display: inline-block'> 
+        <form style='display: contents' method='post' enctype='multipart/form-data'>
+            <button name='buttonImporterImage'>Importer l'image</button>
+            <input type='hidden' name='idProduit' value='$idProduit'>
+            <input type='file' name='fichier'/>
         </form>
     </table>";
 }

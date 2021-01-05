@@ -101,7 +101,7 @@ function Produit_Modifier($connexionPDO, $idProduit, $nom, $description, $resume
         `fichierImage`= :paramfichierImage,
         `prixVenteHT`= :paramprixVenteHT,
         `idCategorie`= :paramidCategorie,
-        `idTVA`= :paramidTVA,
+        `idTVA`= :paramidTVA
         WHERE idProduit = :paramidProduit');
     $requetePreparée->bindParam('paramidProduit', $idProduit);
     $requetePreparée->bindParam('paramnom', $nom);
